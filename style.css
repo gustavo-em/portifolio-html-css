@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+@import '/assets/all.min.css';
+:root {
+    --branco: #ecf0ef;
+    --branco100: #fdfdfd;
+    --verde100: #0c0d0c;
+    --verde200: #031c14;
+    --verde900: #17c896;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+
+#background {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: rgb(23,147,112);
+    background: linear-gradient(90deg, rgba(23,147,112,1) 0%, rgba(12,13,12,1) 100%);
+}
+
+@media (max-width: 700px) {
+    #background {
+        position: absolute;
+        width: 100%;
+        height: fit-content;
+        background: rgb(23,147,112);
+        background: linear-gradient(90deg, rgba(23,147,112,1) 0%, rgba(12,13,12,1) 100%);
+    }
+}
+
+
+#foto{
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/foto.jpeg');
+    background-size: cover;
+    border-radius: 100px;
+}
+
+#container_foto{ 
+    width: 300px;
+    height: 300px;
+}
+
+#content { 
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card_titulo{
+    color: var(--branco);
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.card_texto{ 
+    color: var(--branco100);
+    font-family: 'Roboto';
+}
+
+.card { 
+    border: 3px solid var(--verde900);
+    padding: 20px 100px;
+    border-radius: 15px;
+    margin: 10px;
+    background-color: var(--verde200);
+}
+
+.card:hover{
+    animation-name: zoom;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.card:not(:hover){
+    animation-name: off_zoom;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes zoom {
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+
+@keyframes off_zoom {
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.git{
+    display: inline-block;
+    text-indent: -9999px;
+    width: 24px;
+    height: 24px;
+    background: url('/assets/github.svg');
+    background-size: cover;
+
+}
+
+.linkedin{
+    display: inline-block;
+    text-indent: -9999px;
+    width: 24px;
+    height: 24px;
+    background: url('/assets/linkedin.svg');
+    background-size: cover;
+}
